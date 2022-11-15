@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "iiii-tech.com",
+    "environment": "some env",
+    "comment": "some comment",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "609516094:AAFi6mT-1byrnrhlvh6mWNugiCHd1CELiJc",
+    "chat": "-1001633943461",
+    "replyTo": ""
+  }
+}
