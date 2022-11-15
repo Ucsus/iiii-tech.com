@@ -41,7 +41,7 @@ public class SitePageTest extends TestBase {
         step("Нажимаем на кнопку 'Задать Вопрос'", () -> {
             $(byText("Задать вопрос")).click();
         });
-        step("Проверяем видимость формы'", () -> {
+        step("Проверяем видимость формы", () -> {
             $(".modal-form").shouldBe(visible);
         });
         step("Заполняем форму", () -> {
