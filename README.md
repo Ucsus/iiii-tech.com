@@ -22,7 +22,7 @@
 <a href="https://gradle.org/" target="_blank"><img alt="Gradle" height="50" src="/images/logos/Gradle.svg" width="50"/></a>
 <a href="https://www.jenkins.io/" target="_blank"><img alt="Jenkins" height="50" src="/images/logos/Jenkins.svg" width="50"/></a>
 <a href="https://github.com/allure-framework/" target="_blank"><img alt="Allure" height="50" src="/images/logos/Allure.svg" width="50"/></a>
- <a href="https://qameta.io/" target="_blank"><img alt="Allure TestOps" height="50" src="/images/logos/alluretestops.svg" width="50"/></a>
+ <a href="https://qameta.io/" target="_blank"><img alt="Allure TestOps" height="50" src="/images/logos/alluretestops2.svg" width="50"/></a>
  <a href="https://www.atlassian.com/software/jira" target="_blank"><img alt="Jira" height="50" src="/images/logos/jira.svg" width="50"/></a>
 <a href="https://github.com/" target="_blank"><img alt="GitHub" height="50" src="/images/logos/GitHub.svg" width="50"/></a>
 <a href="https://telegram.org/" target="_blank"><img alt="Telegram" height="50" src="/images/logos/Telegram.svg" width="50"/></a>
