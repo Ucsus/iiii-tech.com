@@ -11,29 +11,30 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase extends AllureAttachments {
     @BeforeAll
-    static void beforeAll() {
+    static void setUp() {
+        SelenideLogger.addListener("Allure", new AllureSelenide());
+        Configuration.baseUrl = "http://iiii-tech.com";
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        Configuration.browserCapabilities = capabilities;
+        System.setProperty("chromeoptions.prefs", "intl.accept_languages=ru");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        Configuration.baseUrl = "https://iiii-tech.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browserCapabilities = capabilities;
+        Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
     }
 
     @BeforeEach
     public void beforeEach() {
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach
-    public void afterEach() {
-
-        screenshotAs("Last screenshot");
-        pageSource();
-        browserConsoleLogs();
-        addVideo();
-
-
+    void addAttach() {
+        AllureAttachments.addVideo();
+        AllureAttachments.browserConsoleLogs();
+        AllureAttachments.screenshotAs("Last screenshot");
+        AllureAttachments.pageSource();
     }
 }

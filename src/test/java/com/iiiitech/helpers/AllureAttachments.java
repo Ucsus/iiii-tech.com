@@ -1,6 +1,7 @@
 package com.iiiitech.helpers;
 
 import com.codeborne.selenide.Selenide;
+
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,6 +20,11 @@ public class AllureAttachments {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
+    @Attachment(value = "Page source", type = "text/plain")
+    public static byte[] pageSource() {
+        return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
+    }
+
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String attachAsText(String attachName, String message) {
         return message;
@@ -31,10 +37,6 @@ public class AllureAttachments {
         );
     }
 
-    @Attachment(value = "Page source", type = "text/plain")
-    public static byte[] pageSource() {
-        return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
-    }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {
@@ -57,4 +59,5 @@ public class AllureAttachments {
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
+
 }
