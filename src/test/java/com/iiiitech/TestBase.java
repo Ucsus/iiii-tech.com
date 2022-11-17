@@ -15,6 +15,7 @@ public class TestBase extends AllureAttachments {
         SelenideLogger.addListener("Allure", new AllureSelenide());
         Configuration.baseUrl = "http://iiii-tech.com";
         Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         System.setProperty("chromeoptions.prefs", "intl.accept_languages=ru");
