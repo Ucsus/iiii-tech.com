@@ -67,15 +67,3 @@ tasks.withType(Test) {
         }
     }
 }
-
-task demowebshop(type: Test) {
-    useJUnitPlatform {
-        includeTags 'demowebshop'
-    }
-}
-
-task t1_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "t1_tests"
-    }
-}
