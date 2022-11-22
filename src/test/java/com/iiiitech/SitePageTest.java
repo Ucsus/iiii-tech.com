@@ -102,11 +102,11 @@ public class SitePageTest extends TestBase {
         step("Открываем главную страницу", () -> {
             siteElements.openPage();
         });
-        step("Открываем статью 'Кибербезопасность и SAP системы'", () -> {
+        step("Открываем статью 'Облачная архитектура: 9 самых важных тенденций на 2022 год'", () -> {
             $(".block-media__card", 1).click();
         });
         step("Проверяем заголовок", () -> {
-            $(".hero-news__title").shouldBe(exactText("Кибербезопасность и SAP системы"));
+            $(".hero-news__title").shouldBe(exactText("Облачная архитектура: 9 самых важных тенденций на 2022 год"));
         });
         step("Скроллим к блоку статьи", () -> {
             $(".article-layout__content").scrollTo();

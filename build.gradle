@@ -41,8 +41,9 @@ dependencies {
             "org.aeonbits.owner:owner:1.0.12",
             "org.assertj:assertj-core:3.23.1",
             "org.slf4j:slf4j-simple:2.0.3",
+            'org.aeonbits.owner:owner:1.0.4',
+            'org.assertj:assertj-core:3.23.1',
             "org.junit.jupiter:junit-jupiter:$junitVersion")
-    "io.qameta.allure:allure-selenide:2.19.0"
 }
 
 tasks.withType(Test) {
