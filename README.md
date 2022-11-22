@@ -36,7 +36,7 @@
 ✓ Проверка шэринга материалов
 
 <a id="jenkins"></a>
-## Сборка в Jenkins <img alt="Jenkins" height="32" src="/images/logos/Jenkins.svg"/></img></br>
+## <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/">Сборка в Jenkins</a> <img alt="Jenkins" height="32" src="/images/logos/Jenkins.svg"/></img></br>
 <img src="/images/screens/jenkins.jpg"></br>
 ### Параметры сборки в Jenkins:
 - Browser (браузер, по умолчанию chrome)
@@ -46,53 +46,39 @@
 
 <a id="console"></a>
 ## Запуск из терминала :desktop_computer:
-Локальный запуск:
+### Локальный запуск:
 ```
 gradle clean test
 ```
 
-Удаленный запуск:
+### Удаленный запуск:
 ```
 clean
 test
--Dbrowser=${Browser}
--DbrowserVersion=${Browser_version}
--DbrowserSize=${Browser_size}
--Durl=${REMOTE_URL}
-```
-### Для запуска удаленных тестов необходимо заполнить remote.properties или передать значение:
-
-* browser (default chrome)
-* browserVersion (default 89.0)
-* browserSize (default 1920x1080)
-* browserMobileView (mobile device name, for example iPhone X)
-* remoteDriverUrl (url address from selenoid or grid)
-* videoStorage (url address where you should get video)
-* threads (number of threads)
-
-
-Запуск тестов с заполненным remote.properties:
-```bash
-gradle clean test
+-Dbrowser=${BROWSER}
+-DbrowserSize=${BROWSER_SIZE}
+-DbrowserVersion=${BROWSER_VERSION}
+-Dremote=${remote}
 ```
 
-Запуск тестов с незаполненным remote.properties:
-```bash
-gradle clean -DremoteDriverUrl=https://%s:%s@selenoid.autotests.cloud/wd/hub/ -DvideoStorage=https://selenoid.autotests.cloud/video/ -Dthreads=1 test
-```
-
-Отчет:
+### Отчет:
 ```bash
 allure serve build/allure-results
 ```
 
+### Параметры сборки
+> <code>BROWSER</code> – браузер (_по умолчанию - chrome_)</br>
+> <code>BROWSER_SIZE</code> – разрешение браузера (_по умолчанию - 1920x1080_)</br>
+> <code>BROWSER_VERSION</code> – версия браузера (_по умолчанию - 100_)</br>
+> <code>remote</code> – логин, пароль и адрес Selenoid (_указаны в Jenkins_)
+
 <a id="allure"></a>
 ## Allure отчёт <img alt="Allure" height="32" src="/images/logos/Allure.svg"/></img></br>
-### <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/13/allure/">Обзор</a>
+### <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/6/allure/">Обзор</a>
 <img src="/images/screens/alluremain.jpg"></br>
-### <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/13/allure/#packages">Тесты</a>
+### <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/6/allure/#packages">Тесты</a>
 <img src="/images/screens/allurepackages.jpg"></br>
-### <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/13/allure/#graph">Графики</a>
+### <a href="https://jenkins.autotests.cloud/job/iiii-tech.com/6/allure/#graph">Графики</a>
 <img src="/images/screens/alluregraphs.jpg"></br>
 
 <a id="alluretestops"></a>
