@@ -48,13 +48,12 @@
 ## Запуск из терминала :desktop_computer:
 ### Локальный запуск:
 ```
-gradle clean test
+gradle clean test -Dcontrol=local
 ```
 
 ### Удаленный запуск:
 ```
-clean
-test
+gradle clean test -Dcontrol=remote
 -Dbrowser=${BROWSER}
 -DbrowserSize=${BROWSER_SIZE}
 -DbrowserVersion=${BROWSER_VERSION}
