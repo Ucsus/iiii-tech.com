@@ -1,6 +1,5 @@
 package com.iiiitech;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.iiiitech.config.WebDriverProvider;
 import com.iiiitech.helpers.AllureAttachments;
@@ -8,14 +7,11 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase extends AllureAttachments {
     @BeforeAll
     static void setUp() {
         WebDriverProvider.config();
-        SelenideLogger.addListener("Allure", new AllureSelenide());
     }
 
 //    @BeforeAll
@@ -35,7 +31,6 @@ public class TestBase extends AllureAttachments {
 
     @BeforeEach
     public void beforeEach() {
-
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
