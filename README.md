@@ -57,7 +57,6 @@ gradle clean test -Dcontrol=remote
 -Dbrowser=${BROWSER}
 -DbrowserSize=${BROWSER_SIZE}
 -DbrowserVersion=${BROWSER_VERSION}
--Dremote=${remote}
 ```
 
 ### Отчет:
